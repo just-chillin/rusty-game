@@ -1,4 +1,4 @@
-mod entities;
+use crate::entities::Entity;
 
 struct Game {
     children: Vec<Box<dyn Entity>>
