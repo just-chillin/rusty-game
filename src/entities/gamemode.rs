@@ -1,4 +1,7 @@
-use crate::entities::Entity;
+use crate::entities::{
+    Entity,
+    player::Player,
+};
 
 struct Game {
     children: Vec<Box<dyn Entity>>
@@ -7,7 +10,7 @@ struct Game {
 impl Game {
     fn new() -> Game {
         Game {
-            children: vec![]
+            children: vec![Box::new(Player::new())]
         }
     }
 }

@@ -1,4 +1,3 @@
-use crate::Entity;
 use std::borrow::Borrow;
 use std::ops::Deref;
 use sdl2::render::WindowCanvas;
@@ -6,6 +5,7 @@ use sdl2::{VideoSubsystem, EventSubsystem, Sdl};
 use sdl2::video::Window;
 use std::rc::Rc;
 use crate::entities::Entity;
+use sdl2::pixels::Color;
 
 pub struct Application {
     sdl_ctx: Sdl,
@@ -30,9 +30,12 @@ impl Application {
         }
     }
 
-    pub fn tick(&self) {
+    pub fn tick(&mut self) {
+        self.canvas.set_draw_color(Color::RGB(0, 255, 255));
+        self.canvas.clear();
         for ent in self.entities.as_slice() {
             ent.tick();
         }
+        canvas.present();
     }
 }

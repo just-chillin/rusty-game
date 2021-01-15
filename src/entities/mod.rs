@@ -1,4 +1,5 @@
-pub mod game;
+pub mod gamemode;
+mod player;
 
 pub trait Entity {
     fn tick(&self);
