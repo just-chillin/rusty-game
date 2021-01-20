@@ -1,12 +1,11 @@
-mod application;
+use entities::application::Application;
+
 mod entities;
 
 extern crate sdl2;
 
-use crate::application::Application;
-
 fn main() {
-    let app = Application::new();
+    let mut app = Application::new();
     loop {
         app.tick();
     }

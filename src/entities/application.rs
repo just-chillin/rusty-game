@@ -4,8 +4,8 @@ use sdl2::render::WindowCanvas;
 use sdl2::{VideoSubsystem, EventSubsystem, Sdl};
 use sdl2::video::Window;
 use std::rc::Rc;
-use crate::entities::Entity;
 use sdl2::pixels::Color;
+use crate::entities::entity::Entity;
 
 pub struct Application {
     sdl_ctx: Sdl,
@@ -36,6 +36,6 @@ impl Application {
         for ent in self.entities.as_slice() {
             ent.tick();
         }
-        canvas.present();
+        self.canvas.present();
     }
 }

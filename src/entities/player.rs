@@ -1,14 +1,14 @@
-use crate::entities::Entity;
 use std::io::Cursor;
+use crate::entities::entity::Entity;
 
-pub(crate) struct Player {
-    sprite: Cursor<T>
+pub struct Player {
+    sprite: Cursor<&'static [u8]>
 }
 
 impl Player {
     pub fn new() -> Player {
         Player {
-            sprite: Cursor(include_bytes!("../../assets/PepeSprite.bmp"))
+            sprite: Cursor::new(include_bytes!("../../assets/PepeSprite.bmp"))
         }
     }
 }

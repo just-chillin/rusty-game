@@ -1,7 +1,5 @@
-use crate::entities::{
-    Entity,
-    player::Player,
-};
+use crate::entities::entity::Entity;
+use crate::entities::player::Player;
 
 struct Game {
     children: Vec<Box<dyn Entity>>
