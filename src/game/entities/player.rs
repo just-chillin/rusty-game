@@ -1,5 +1,5 @@
 use std::io::Cursor;
-use crate::entities::entity::Entity;
+use crate::engine::Entity;
 
 pub struct Player {
     sprite: Cursor<&'static [u8]>
@@ -8,7 +8,7 @@ pub struct Player {
 impl Player {
     pub fn new() -> Player {
         Player {
-            sprite: Cursor::new(include_bytes!("../../assets/PepeSprite.bmp"))
+            sprite: Cursor::new(include_bytes!("../../../assets/PepeSprite.bmp"))
         }
     }
 }

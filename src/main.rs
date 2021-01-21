@@ -1,12 +1,13 @@
-use entities::application::Application;
+mod engine;
+mod game;
 
-mod entities;
+use game::entities::gamemode;
+use engine::Application;
+use crate::game::entities::BoringGameMode;
 
 extern crate sdl2;
 
 fn main() {
-    let mut app = Application::new();
-    loop {
-        app.tick();
-    }
+    let app = Application::new();
+    app.run::<BoringGameMode>();
 }
